@@ -290,6 +290,8 @@ configure(allprojects) { project ->
 			cacheChangingModulesFor 0, "seconds"
 		}
 		repositories {
+			maven { url "https://maven.aliyun.com/repository/public" }
+			maven { url 'https://maven.aliyun.com/repository/central'}
 			mavenCentral()
 			maven { url "https://repo.spring.io/libs-spring-framework-build" }
 		}
@@ -362,7 +364,7 @@ configure([rootProject] + javaProjects) { project ->
 		// JSR-305 only used for non-required meta-annotations
 		compileOnly("com.google.code.findbugs:jsr305")
 		testCompileOnly("com.google.code.findbugs:jsr305")
-		checkstyle("io.spring.javaformat:spring-javaformat-checkstyle:0.0.31")
+		// checkstyle("io.spring.javaformat:spring-javaformat-checkstyle:0.0.31")
 	}
 
 	ext.javadocLinks = [
